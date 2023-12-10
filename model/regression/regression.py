@@ -60,6 +60,15 @@ class Processor():
         return fair_price
     
     def predict_one(self, output,ground):
+        Have_stuff = False
+        for _, item in output.items():
+            if item['number'] not in [0, 1]:
+                Have_stuff = True
+                break
+        if( not Have_stuff):
+            return 0
+
+
         data = self.process_output(output)
         # Calc fair price
         fair_price = self._calc_fair_price(data)
