@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 52
+names: ['big fried chicken leg', 'big grilled chicken leg', 'big herbal chicken leg', 'box', 'braised fish', 'braised fish fillet', 'braised pork', 'braised pork ribs', 'brown rice', 'cheese pork chops', 'chicken steak', 'curry chicken', 'cuttlefish steak', 'fried chicken leg steak', 'fried chicken rolls', 'fried cod steak', 'fried pork chops', 'fried pork cubes', 'fried shishamo', 'fried spanish mackerel', 'garlic white meat', 'grilled chicken leg steak', 'grilled chicken steak', 'grilled mackerel', 'herbal chicken', 'honey grilled chicken leg', 'kara chicken leg steak', 'lion head', 'pan fried fish fillet', 'pig ear', 'plate', 'pork with scrambled eggs', 'purple rice', 'salmon', 'sausage', 'sauteed pork', 'scallion chicken', 'shacha pork', 'shrimp rolls', 'side dish', 'small fried chicken leg', 'small grilled chicken leg', 'small herbal chicken leg', 'spicy chicken', 'steamed fish fillet', 'stir-fried minced pork', 'sweet and spicy chicken steak', 'thai pork', 'three cup chicken', 'unknown square main dish', 'white rice', 'white sauce chicken']
+
+roboflow:
+  workspace: project-8xxnr
+  project: final-project-jydwq
+  version: 11
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/project-8xxnr/final-project-jydwq/dataset/11
