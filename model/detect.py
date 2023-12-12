@@ -166,9 +166,11 @@ def detect(save_img=False):
                         plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=1)
 
             # Print time (inference + NMS)
+            W = im0.shape[0]
+            H = im0.shape[1]
             print(f'{s}Done. ({(1E3 * (t2 - t1)):.1f}ms) Inference, ({(1E3 * (t3 - t2)):.1f}ms) NMS')
-            cv2.putText(im0, f'{price}' , (700, 1000), cv2.FONT_HERSHEY_SIMPLEX,  10, (0, 0, 255), 10, cv2.LINE_AA)
-            cv2.putText(im0, f'{s}' , (10, 50), cv2.FONT_HERSHEY_SIMPLEX,  1, (255, 0, 0), 2, cv2.LINE_AA)
+            cv2.putText(im0, f'{price}' , (int(0.9*W), int(0.7*H)), cv2.FONT_HERSHEY_SIMPLEX,  int(H/200), (0, 0, 255), int(H/200), cv2.LINE_AA)
+            cv2.putText(im0, f'{s}' , (int(0.05*W), int(0.05*H)), cv2.FONT_HERSHEY_SIMPLEX,  1, (255, 0, 0), 1, cv2.LINE_AA)
 
             # Stream results
             if view_img:
