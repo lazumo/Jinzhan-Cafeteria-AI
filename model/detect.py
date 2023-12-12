@@ -141,7 +141,7 @@ def detect(save_img=False):
                     #    TO_regresssion[class_name]['coordinate'].append('coordinate')
                 print(TO_regresssion)
                 price  = Jinzhan_BOSS.predict_one(TO_regresssion,True)
-
+		
                 # Rescale boxes from img_size to im0 size
                 det[:, :4] = scale_coords(img.shape[2:], det[:, :4], im0.shape).round()
                 # Print results
@@ -166,10 +166,12 @@ def detect(save_img=False):
                         plot_one_box(xyxy, im0, label=label, color=colors[int(cls)], line_thickness=1)
 
             # Print time (inference + NMS)
-            W = im0.shape[0]
-            H = im0.shape[1]
+	 
+            H = im0.shape[0]
+            W = im0.shape[1]
+            print('img.shape',img.shape,'im0.shape',im0.shape,)
             print(f'{s}Done. ({(1E3 * (t2 - t1)):.1f}ms) Inference, ({(1E3 * (t3 - t2)):.1f}ms) NMS')
-            cv2.putText(im0, f'{price}' , (int(0.9*W), int(0.7*H)), cv2.FONT_HERSHEY_SIMPLEX,  int(H/200), (0, 0, 255), int(H/200), cv2.LINE_AA)
+            cv2.putText(im0, f'{price}' , (int(0.8*W), int(0.9*H)), cv2.FONT_HERSHEY_SIMPLEX,  int(H/200), (0, 0, 255), int(H/200), cv2.LINE_AA)
             cv2.putText(im0, f'{s}' , (int(0.05*W), int(0.05*H)), cv2.FONT_HERSHEY_SIMPLEX,  1, (255, 0, 0), 1, cv2.LINE_AA)
 
             # Stream results
