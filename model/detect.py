@@ -18,10 +18,10 @@ from utils.plots import plot_one_box
 from utils.torch_utils import select_device, load_classifier, time_synchronized, TracedModel
 
 #def evaluate_price:
-def toyolo_format(original_coor):
+def toyolo_format(original_coor,img):
     #H,W640
-    H=640
-    W=640
+    H=img[2]
+    W=img[3]
     XMin= original_coor[0]
     XMax= original_coor[2]
     YMin= original_coor[1]
@@ -131,7 +131,7 @@ def detect(save_img=False):
                 TO_regresssion = {}
                 for i,item in enumerate(det):
                     #names[int(c)]
-                    coor =  toyolo_format(item[:4])
+                    coor =  toyolo_format(item[:4],img.shape)
                     #class_name = names[int(item[-1])]
                     TO_regresssion[str(i)] = { 'number':int(item[-1]), 'location':coor}
                     #if(not class_name in TO_regresssion):
@@ -171,8 +171,9 @@ def detect(save_img=False):
             W = im0.shape[1]
             print('img.shape',img.shape,'im0.shape',im0.shape,)
             print(f'{s}Done. ({(1E3 * (t2 - t1)):.1f}ms) Inference, ({(1E3 * (t3 - t2)):.1f}ms) NMS')
-            cv2.putText(im0, f'{price}' , (int(0.8*W), int(0.9*H)), cv2.FONT_HERSHEY_SIMPLEX,  int(H/200), (0, 0, 255), int(H/200), cv2.LINE_AA)
-            cv2.putText(im0, f'{s}' , (int(0.05*W), int(0.05*H)), cv2.FONT_HERSHEY_SIMPLEX,  1, (255, 0, 0), 1, cv2.LINE_AA)
+            #W,H
+            cv2.putText(im0, f'{price}' , (int(0.1*W), int(0.9*H)), cv2.FONT_HERSHEY_SIMPLEX,  int(min(H,W)/200), (0, 0, 255), int(min(H,W)/200), cv2.LINE_AA)
+            cv2.putText(im0, f'{s}' , (int(0.05*W), int(0.05*H)), cv2.FONT_HERSHEY_SIMPLEX,  W/1000, (255, 0, 0), 1, cv2.LINE_AA)
 
             # Stream results
             if view_img:
