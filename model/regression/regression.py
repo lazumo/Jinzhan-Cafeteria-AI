@@ -1,14 +1,14 @@
 import numpy as np
 import pandas as pd
-class Processor():  
+class Processor():
     def __init__(self):
         self.model_feature_names_in_ = np.array(['side dish', 'white rice', 'purple rice', 'brown rice', 'plate',
        'box', 'main_dish_25', 'main_dish_30', 'main_dish_40',
        'side_dishes_n'])
-        self.model_coef_ = np.array([ 11.54031221, -19.96180313, -19.66237169, -23.35313679,
-        -2.65625959,  -2.91208389,   3.67859321,   1.15122184,
-         2.32304665,  -2.91490648])
-        self.model_intercept_ = 12.785702021623191
+        self.model_coef_ = np.array([  7.35555378, -19.20782759, -18.76698523, -23.4204906 ,
+        -2.76915495,  -2.96387808,   5.05775031,   1.67751921,
+         1.54314473,  -1.65452775])
+        self.model_intercept_ = 10.86652436106688
         self.class_id_to_name = ['plate', 'box', 'white rice', 'brown rice', 'purple rice', 'side dish', 'main_dish_25', 'main_dish_30', 'main_dish_40']
         self.name_to_money = {'side dish': 10, 'white rice': 20, 'purple rice': 20, 'brown rice': 20, 'main_dish_25': 25, 'main_dish_30': 30, 'main_dish_40': 40}
         self.containers = ["box", "plate"]
@@ -67,8 +67,6 @@ class Processor():
                 break
         if( not Have_stuff):
             return 0
-
-
         data = self.process_output(output)
         # Calc fair price
         fair_price = self._calc_fair_price(data)
@@ -81,4 +79,3 @@ class Processor():
             return int(round(pred_price[0] / 5) * 5)
         else:
             return pred_price[0]
-    
