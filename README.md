@@ -32,6 +32,7 @@ It is in Model-> Regression.
 ## Modification
 The main modification is that we added our regression model and also pluged it into detect.py. 
 ## How to use
+Go to file model.
 ``` shell
 python detect.py --weights Jinzhan.pt --conf 0.25 --img-size 640 --source 0
 ```
