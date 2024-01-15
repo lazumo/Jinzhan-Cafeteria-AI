@@ -6,6 +6,7 @@ We modify YOLOv7 to detect the food image from the cafeteria in our campus, "Jin
 credit: https://github.com/WongKinYiu/yolov7
 ## Performance
 With only regression and ±5 accuracy : 86.6%
+
 With concatenated model and ±5 accuracy : 80.2%
 ## Dataset
 There are two kinds of data:
