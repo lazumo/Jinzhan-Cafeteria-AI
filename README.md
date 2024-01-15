@@ -36,5 +36,6 @@ python detect.py --weights Jinzhan.pt --conf 0.25 --img-size 640 --source 0
         <img src="./example.png" width="39%"/>
     </a>
 </div>
+
 ## Use of right
 This is open to anyone who is interested.
