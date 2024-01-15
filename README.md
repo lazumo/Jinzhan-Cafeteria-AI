@@ -36,6 +36,10 @@ Go to file model.
 ``` shell
 python detect.py --weights Jinzhan.pt --conf 0.25 --img-size 640 --source 0
 ```
+To access camera
+``` shell
+python detect.py --weights Jinzhan.pt --conf 0.25 --img-size 640 --source -1
+```
 ## Food estimation
 <div align="center">
     <a href="./">
