@@ -30,6 +30,11 @@ The main modification is that we added our regression model and also pluged it i
 ``` shell
 python detect.py --weights Jinzhan.pt --conf 0.25 --img-size 640 --source 0
 ```
-
+## Food estimation
+<div align="center">
+    <a href="./">
+        <img src="./example.png" width="39%"/>
+    </a>
+</div>
 ## Use of right
 This is open to anyone who is interested.
