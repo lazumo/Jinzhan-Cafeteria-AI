@@ -4,6 +4,11 @@ This project is the final project of the course, "Introduction to Machine Learni
 We modify YOLOv7 to detect the food image from the cafeteria in our campus, "Jinzhan", and also use regression model to predict the price based on the detection result from YOLOv7 model, since the price is not only based on number of each food classes but also its combination and food amount.
 
 credit: https://github.com/WongKinYiu/yolov7
+## Setup
+``` shell
+pip install -r /path/to/requirements.txt
+```
+
 ## Performance
 With only regression and ±5 accuracy : 86.6%
 
