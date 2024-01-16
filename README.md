@@ -107,6 +107,28 @@ To access camera
 python detect.py --weights Jinzhan.pt --conf 0.25 --img-size 640 --source -1
 ```
 ### Regresssion Model
+1. Fill in your model's coefficient and intercept in regression-API.ipynb
+```python
+# /model/regression/regression-API.ipynb
+class Processor():
+    def __init__(self):
+        self.model_feature_names_in_ = np.array(['side dish', 'white rice', 'purple rice', 'brown rice', 'plate',
+       'box', 'main_dish_25', 'main_dish_30', 'main_dish_40',
+       'side_dishes_n'])
+        self.model_coef_ = # Fill in
+        self.model_intercept_ = # Fill in
+        self.class_id_to_name = ['plate', 'box', 'white rice', 'brown rice', 'purple rice', 'side dish', 'main_dish_25', 'main_dish_30', 'main_dish_40']
+        self.name_to_money = {'side dish': 10, 'white rice': 20, 'purple rice': 20, 'brown rice': 20, 'main_dish_25': 25, 'main_dish_30': 30, 'main_dish_40': 40}
+        self.containers = ["box", "plate"]
+        self.side_dishes = ["side dish"]
+```
+2. Now you can use the model to predict with a Processor instance
+```python
+# /model/regression/regression-API.ipynb
+processor = Processor()
+# ...
+y_hat = processor.predict_one(output) # output is an yolov7 result
+```
 
 ## Generated Result
 <div align="center">
