@@ -79,7 +79,7 @@ python train.py --workers 8 --device 0 --batch-size 32 --data Jinzhan-Cafeteria-
 ### Regresssion Model
 
 ## Inference
-### yolov7 model
+### Overall system
 Go to file model.
 ``` shell
 python detect.py --weights Jinzhan.pt --conf 0.25 --img-size 640 --source 0
