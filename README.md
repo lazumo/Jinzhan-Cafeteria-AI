@@ -5,7 +5,7 @@ We modify YOLOv7 to detect the food image from the cafeteria in our campus, "Jin
 For more detail, we encourage you to refer to Campus Cafeteria Recognition and Billing System - Based on YOLOv7 and Regression Models.pdf
 
 credit: https://github.com/WongKinYiu/yolov7
-## Setup
+## Environment Setup
 Our system is built upon the YOLOv7 architecture with principal alterations aimed at enhancing its capability to handle regression models. These modifications are summarized as follows:
 
 A new directory for regression models has been integrated into the existing model structure for dedicated regression model training.
