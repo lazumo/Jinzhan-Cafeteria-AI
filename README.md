@@ -29,6 +29,10 @@ Add the regression model folder to the corresponding location within the YOLOv7 
 
 ## Performance
 ### Yolov7 Model
+![image](https://github.com/lazumo/Jinzhan-Cafeteria-AI/assets/92087054/43688af6-41c4-4350-81fb-a482f0000610)
+
+The figure illustrates our confusion matrix. The values along the diagonal line exceed 0.9, indicating a confidence level of over 90% in the correctness of our predictions. 
+
 ### Regression Model
 |   model  | exact accuracy |+-5 dollars accuracy |
 | -------- | ------- |------- |
