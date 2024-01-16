@@ -5,14 +5,35 @@ We modify YOLOv7 to detect the food image from the cafeteria in our campus, "Jin
 
 credit: https://github.com/WongKinYiu/yolov7
 ## Setup
-``` shell
+Our system is built upon the YOLOv7 architecture with principal alterations aimed at enhancing its capability to handle regression models. These modifications are summarized as follows:
+
+A new directory for regression models has been integrated into the existing model structure for dedicated regression model training.
+Adjustments to model/detect.py allow for the visualization of price information directly on the images.
+Environment Setup
+To utilize our custom implementation, you may set up your environment using one of the two following methods:
+
+Method 1: Clone Our Repository
+bash
+Copy code
+
+```shell
+git clone https://github.com/lazumo/Jinzhan-Cafeteria-AI
 pip install -r /path/to/requirements.txt
 ```
 
-## Performance
-With only regression and ±5 accuracy : 86.6%
+Method 2: Modify Original YOLOv7 Implementation
+Download the original YOLOv7 implementation from its official webpage.
+Replace the original detect.py with our modified version.
+Add the regression model folder to the corresponding location within the YOLOv7 directory structure.
 
-With concatenated model and ±5 accuracy : 80.2%
+## Performance
+|   model  | exact accuracy |+-5 dollars accuracy |
+| -------- | ------- |------- |
+| Regression Model | 34.3%    | 86.6%    |
+| concatenated system(Throuput) | 30.9%    | 80.2%    |
+
++-5 dollars accuracy means the accuracy with 5 NT dollars error margin.
+
 ## Dataset
 There are two kinds of data:
 ### Image:
