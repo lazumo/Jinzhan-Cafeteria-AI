@@ -28,6 +28,8 @@ Replace the original detect.py with our modified version.
 Add the regression model folder to the corresponding location within the YOLOv7 directory structure.
 
 ## Performance
+### Yolov7 Model
+### Regression Model
 |   model  | exact accuracy |+-5 dollars accuracy |
 | -------- | ------- |------- |
 | Regression Model | 34.3%    | 86.6%    |
@@ -51,21 +53,30 @@ The corresponding image is also recorded in the Table.
 The weight is Jinzhan.pt.
 ### Regression
 It is in Model-> Regression.
-## Modification
-The main modification is that we added our regression model and also pluged it into detect.py. 
+
 ## Training
 ### yolov7 model
-Train with 52 classes:
+* Train with 52 classes:
 ``` python
 python train.py --workers 8 --device 0 --batch-size 32 --data Jinzhan-Cafeteria-AI/dataset/image_data
 /data.yaml --img 640 640
 ```
-Train with 9 classes:
-step1:
+* Train with 9 classes:
+1. run decrease_label.py
 ``` shell
 python decrease_label.py
 ```
-step2: modify the .yaml file: nc:9   names:['plate', 'box', 'white rice', 'brown rice', 'purple rice', 'side dish', 'main_dish_25', 'main_dish_30', 'main_dish_40']
+2. modify the .yaml file
+``` yaml
+nc:9
+names:['plate', 'box', 'white rice', 'brown rice', 'purple rice', 'side dish', 'main_dish_25', 'main_dish_30', 'main_dish_40']
+```
+3. Run
+```python
+python train.py --workers 8 --device 0 --batch-size 32 --data Jinzhan-Cafeteria-AI/dataset/image_data
+/data.yaml --img 640 640
+```
+
 ## Inference
 Go to file model.
 ``` shell
