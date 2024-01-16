@@ -76,7 +76,25 @@ names:['plate', 'box', 'white rice', 'brown rice', 'purple rice', 'side dish', '
 python train.py --workers 8 --device 0 --batch-size 32 --data Jinzhan-Cafeteria-AI/dataset/image_data
 /data.yaml --img 640 640
 ```
-### Regresssion Model
+### Regression Model
+* Train with 9 classes:
+1. Specify a yolov7 result folder to train
+```python
+# /model/regression/regression-decreased.ipynb
+datafolder = DataFolderDecreased("final project.v11i.yolov7pytorch_decrease")
+```
+2. Run regression-decreased.ipynb
+3. Done! Here's your model's coefficient and intercept
+```python
+# /model/regression/regression-decreased.ipynb
+model.coef_
+# array([ 11.54031221, -19.96180313, -19.66237169, -23.35313679,
+#         -2.65625959,  -2.91208389,   3.67859321,   1.15122184,
+#          2.32304665,  -2.91490648])
+
+model.intercept_
+# 12.785702021623191
+```
 
 ## Inference
 ### Overall system
