@@ -76,8 +76,10 @@ names:['plate', 'box', 'white rice', 'brown rice', 'purple rice', 'side dish', '
 python train.py --workers 8 --device 0 --batch-size 32 --data Jinzhan-Cafeteria-AI/dataset/image_data
 /data.yaml --img 640 640
 ```
+### Regresssion Model
 
 ## Inference
+### yolov7 model
 Go to file model.
 ``` shell
 python detect.py --weights Jinzhan.pt --conf 0.25 --img-size 640 --source 0
@@ -86,7 +88,9 @@ To access camera
 ``` shell
 python detect.py --weights Jinzhan.pt --conf 0.25 --img-size 640 --source -1
 ```
-## Food estimation
+### Regresssion Model
+
+## Generated Result
 <div align="center">
     <a href="./">
         <img src="./example.png" width="39%"/>
